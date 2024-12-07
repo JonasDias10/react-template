@@ -159,6 +159,27 @@ export const Components = (isDarkMode: boolean): ComponentsType<Theme> => {
           }
         }
       ]
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          minHeight: 30
+        },
+        indicator: {
+          height: 1.2
+        }
+      }
+    },
+    MuiTab: {
+      defaultProps: {
+        disableRipple: true
+      },
+      styleOverrides: {
+        root: {
+          minHeight: 20,
+          fontWeight: 500
+        }
+      }
     }
   };
 };

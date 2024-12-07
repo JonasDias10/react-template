@@ -11,3 +11,9 @@ export const setLastPathname = (pathname: string) => {
 
   sessionStorage.setItem("redirect", pathname);
 };
+
+export const clearLastPathname = () => {
+  if (!sessionStorage) return null;
+
+  sessionStorage.removeItem("redirect");
+};

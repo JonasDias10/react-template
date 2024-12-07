@@ -11,7 +11,7 @@ export const paths = {
     USERS: "/users"
   },
   USER: {
-    ACCOUNT: "/account"
+    ACCOUNT: "/user/account"
   },
   NOT_FOUND: "*"
 };

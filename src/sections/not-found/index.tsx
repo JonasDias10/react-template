@@ -1,9 +1,12 @@
 import { Iconify } from "@/components/iconify";
+import { clearLastPathname } from "@/contexts/auth/pathname";
 import { paths } from "@/routes/paths";
 import { Stack, Button, useTheme, alpha, Typography } from "@mui/material";
 
 export function NotFoundView() {
   const theme = useTheme();
+
+  clearLastPathname();
 
   return (
     <Stack

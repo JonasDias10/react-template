@@ -51,7 +51,7 @@ export function AccountMenu({ onCloseAccountMenu, anchorEl }: Props) {
 
       <MenuList>
         {menuItems.map(({ label, icon, path }) => (
-          <MenuItem key={label} component={RouterLink} to={path}>
+          <MenuItem key={label} component={RouterLink} to={path} onClick={onCloseAccountMenu}>
             <ListItemIcon>
               <Iconify icon={icon} width={24} height={24} />
             </ListItemIcon>
