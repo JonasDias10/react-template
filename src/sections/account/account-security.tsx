@@ -1,9 +1,8 @@
-import * as Yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Stack } from "@mui/material";
 import { TextFieldController } from "@/components/form";
-import { LoadingButton } from "@mui/lab";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Button, Stack } from "@mui/material";
+import { useForm } from "react-hook-form";
+import * as Yup from "yup";
 
 const AccountSecuritySchema = Yup.object().shape({
   password: Yup.string().min(8, "A senha deve ter no mínimo 8 caracteres").required("Senha obrigatória"),
@@ -50,7 +49,7 @@ export function AccountSecurity() {
 
         <TextFieldController name="confirmPassword" control={control} label="Confirmar Senha" type="password" />
 
-        <LoadingButton
+        <Button
           fullWidth
           type="submit"
           variant="contained"
@@ -58,7 +57,7 @@ export function AccountSecurity() {
           loading={isSubmitting}
         >
           Alterar Senha
-        </LoadingButton>
+        </Button>
       </Stack>
     </form>
   );

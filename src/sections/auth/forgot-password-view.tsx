@@ -1,11 +1,10 @@
-import * as Yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { paths } from "@/routes/paths";
-import { Box, Link, Stack, Typography } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
 import { TextFieldController } from "@/components/form";
+import { paths } from "@/routes/paths";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { useForm } from "react-hook-form";
 import { Link as RouterLink } from "react-router-dom";
+import * as Yup from "yup";
 
 const ForgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email("Email inválido").required("Email obrigatório")
@@ -37,9 +36,9 @@ export default function LoginView() {
       <Stack spacing={2} alignItems="flex-end" sx={{ width: 1 }}>
         <TextFieldController name="email" control={control} label="Email" />
 
-        <LoadingButton fullWidth type="submit" variant="contained" sx={{ mt: 3, height: 48 }} loading={isSubmitting}>
+        <Button fullWidth type="submit" variant="contained" sx={{ mt: 3, height: 48 }} loading={isSubmitting}>
           Redefinir Senha
-        </LoadingButton>
+        </Button>
       </Stack>
     </form>
   );

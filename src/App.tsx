@@ -1,9 +1,9 @@
+import { SnackbarProvider } from "notistack";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./contexts/auth/auth-provider";
 import { Routes } from "./routes";
 import { ThemeProvider } from "./theme/theme-provider";
-import { AuthProvider } from "./contexts/auth/auth-provider";
-import { SnackbarProvider } from "notistack";
 
 export function App() {
   return (
@@ -11,7 +11,7 @@ export function App() {
       <SnackbarProvider autoHideDuration={3000} anchorOrigin={{ vertical: "top", horizontal: "left" }}>
         <AuthProvider>
           <ThemeProvider>
-            <BrowserRouter>
+            <BrowserRouter future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
               <Routes />
             </BrowserRouter>
           </ThemeProvider>

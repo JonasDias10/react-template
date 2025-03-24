@@ -1,14 +1,13 @@
-import * as Yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { TextFieldController } from "@/components/form";
+import { Iconify } from "@/components/iconify";
 import { useAuth } from "@/contexts/auth/use-auth";
 import { paths } from "@/routes/paths";
-import { Box, Divider, IconButton, Link, Stack, Typography } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
-import { Iconify } from "@/components/iconify";
-import { TextFieldController } from "@/components/form";
-import { Link as RouterLink } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Box, Button, Divider, IconButton, Link, Stack, Typography } from "@mui/material";
 import { useSnackbar } from "notistack";
+import { useForm } from "react-hook-form";
+import { Link as RouterLink } from "react-router-dom";
+import * as Yup from "yup";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Email inválido").required("Email obrigatório"),
@@ -56,9 +55,9 @@ export default function LoginView() {
 
         <TextFieldController name="password" control={control} label="Senha" type="password" />
 
-        <LoadingButton fullWidth type="submit" variant="contained" sx={{ mt: 3, height: 48 }} loading={isSubmitting}>
+        <Button fullWidth type="submit" variant="contained" sx={{ mt: 3, height: 48 }} loading={isSubmitting}>
           Entrar
-        </LoadingButton>
+        </Button>
       </Stack>
     </form>
   );

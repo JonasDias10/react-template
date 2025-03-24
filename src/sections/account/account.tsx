@@ -1,9 +1,8 @@
-import * as Yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Avatar, Box, Stack, Typography, Grid2 as Grid, Paper } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
 import { TextFieldController } from "@/components/form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Avatar, Box, Button, Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
+import { useForm } from "react-hook-form";
+import * as Yup from "yup";
 
 const AccountSchema = Yup.object().shape({
   name: Yup.string().required("Nome obrigatório"),
@@ -75,7 +74,7 @@ export function Account() {
       </Grid>
 
       <Stack>
-        <LoadingButton
+        <Button
           fullWidth
           type="submit"
           variant="contained"
@@ -83,7 +82,7 @@ export function Account() {
           loading={isSubmitting}
         >
           Salvar
-        </LoadingButton>
+        </Button>
       </Stack>
     </form>
   );

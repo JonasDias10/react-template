@@ -1,13 +1,12 @@
-import * as Yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { TextFieldController } from "@/components/form";
+import { Iconify } from "@/components/iconify";
 import { useAuth } from "@/contexts/auth/use-auth";
 import { paths } from "@/routes/paths";
-import { Box, Divider, IconButton, Link, Stack, Typography } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
-import { Iconify } from "@/components/iconify";
-import { TextFieldController } from "@/components/form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Box, Button, Divider, IconButton, Link, Stack, Typography } from "@mui/material";
+import { useForm } from "react-hook-form";
 import { Link as RouterLink } from "react-router-dom";
+import * as Yup from "yup";
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string().required("Nome obrigatório"),
@@ -55,9 +54,9 @@ export default function RegisterView() {
 
         <TextFieldController name="confirmPassword" control={control} label="Confirmar Senha" type="password" />
 
-        <LoadingButton fullWidth type="submit" variant="contained" sx={{ mt: 3, height: 48 }} loading={isSubmitting}>
+        <Button fullWidth type="submit" variant="contained" sx={{ mt: 3, height: 48 }} loading={isSubmitting}>
           Criar Conta
-        </LoadingButton>
+        </Button>
       </Stack>
     </form>
   );

@@ -1,10 +1,9 @@
-import * as Yup from "yup";
-import { useForm } from "react-hook-form";
+import { SelectController, TextFieldController } from "@/components/form";
+import { Role, Status, User } from "@/types/user";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Box, Button, DialogActions, MenuItem, Stack } from "@mui/material";
-import { SelectController, TextFieldController } from "@/components/form";
-import { LoadingButton } from "@mui/lab";
-import { Role, Status, User } from "@/types/user";
+import { useForm } from "react-hook-form";
+import * as Yup from "yup";
 
 type Props = {
   user: User | undefined;
@@ -91,9 +90,9 @@ export function UserForm({ user, onCloseForm, setUsers }: Props) {
           Cancelar
         </Button>
 
-        <LoadingButton type="submit" variant="contained" loading={isSubmitting} sx={{ minWidth: 120, height: 44 }}>
+        <Button type="submit" variant="contained" loading={isSubmitting} sx={{ minWidth: 120, height: 44 }}>
           Salvar
-        </LoadingButton>
+        </Button>
       </DialogActions>
     </form>
   );
