@@ -1,7 +1,7 @@
-import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "./use-auth";
 import { paths } from "@/routes/paths";
-import { setLastPathname } from "./pathname";
+import { Navigate, useLocation } from "react-router-dom";
+import { setLastPathnameVisited } from "./pathname-visited";
+import { useAuth } from "./use-auth";
 
 type Props = {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export const AuthGuard = ({ children }: Props) => {
   const { pathname } = useLocation();
 
   if (!isAuthenticated) {
-    setLastPathname(pathname);
+    setLastPathnameVisited(pathname);
 
     return <Navigate to={paths.LANDING} replace />;
   }

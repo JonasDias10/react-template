@@ -7,11 +7,11 @@ import {
   Box,
   Button,
   Container,
+  Grid2 as Grid,
   Stack,
   ToggleButton,
   Toolbar,
-  Typography,
-  Grid2 as Grid
+  Typography
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -101,7 +101,8 @@ export function LandingView() {
               <Box
                 sx={{
                   textAlign: "center",
-                  p: 4,
+                  px: 4,
+                  py: 8,
                   bgcolor: isDarkMode ? alpha(theme.palette.grey[800], 0.6) : theme.palette.common.white,
                   borderRadius: 1,
                   boxShadow: 2,

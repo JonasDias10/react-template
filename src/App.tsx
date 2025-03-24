@@ -8,7 +8,7 @@ import { ThemeProvider } from "./theme/theme-provider";
 export function App() {
   return (
     <HelmetProvider>
-      <SnackbarProvider autoHideDuration={3000} anchorOrigin={{ vertical: "top", horizontal: "left" }}>
+      <SnackbarProvider autoHideDuration={3000} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
         <AuthProvider>
           <ThemeProvider>
             <BrowserRouter future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>

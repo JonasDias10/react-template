@@ -1,4 +1,4 @@
-export const getLastPathname = () => {
+export const getLastPathnameVisited = () => {
   if (!sessionStorage) return null;
 
   const lastPathname = sessionStorage.getItem("redirect");
@@ -6,13 +6,13 @@ export const getLastPathname = () => {
   return lastPathname;
 };
 
-export const setLastPathname = (pathname: string) => {
+export const setLastPathnameVisited = (pathname: string) => {
   if (!sessionStorage) return null;
 
   sessionStorage.setItem("redirect", pathname);
 };
 
-export const clearLastPathname = () => {
+export const clearLastPathnameVisited = () => {
   if (!sessionStorage) return null;
 
   sessionStorage.removeItem("redirect");

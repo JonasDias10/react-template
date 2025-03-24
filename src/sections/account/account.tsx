@@ -1,6 +1,6 @@
 import { TextFieldController } from "@/components/form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Avatar, Box, Button, Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Button, Grid2 as Grid, Paper, Stack } from "@mui/material";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 
@@ -95,6 +95,7 @@ export function Account() {
         sx={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           p: 2,
           gap: 2,
           mb: 2,
@@ -103,10 +104,6 @@ export function Account() {
         }}
       >
         <Avatar sx={{ width: 84, height: 84 }}>J</Avatar>
-
-        <Typography variant="h6" sx={{ mt: 2 }}>
-          react-template
-        </Typography>
       </Box>
 
       {renderForm}

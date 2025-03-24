@@ -1,12 +1,15 @@
 import { Iconify } from "@/components/iconify";
-import { clearLastPathname } from "@/contexts/auth/pathname";
+import { clearLastPathnameVisited } from "@/contexts/auth/pathname-visited";
 import { paths } from "@/routes/paths";
-import { Stack, Button, useTheme, alpha, Typography } from "@mui/material";
+import { alpha, Button, Stack, Typography, useTheme } from "@mui/material";
+import { useEffect } from "react";
 
 export function NotFoundView() {
   const theme = useTheme();
 
-  clearLastPathname();
+  useEffect(() => {
+    clearLastPathnameVisited();
+  }, []);
 
   return (
     <Stack

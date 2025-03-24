@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { JSX, useState } from "react";
 
 import { Box, Card, Stack, Tab, Tabs, Typography } from "@mui/material";
 
